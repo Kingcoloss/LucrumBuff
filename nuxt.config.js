@@ -18,20 +18,31 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    '@/assets/index.scss'
+    '@/assets/scss/main.scss'
   ],
+  styleResources: {
+    scss: './assets/scss/global.scss'
+  },
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
-  components: true,
+  components: {
+    dirs: [
+      '~/components',
+      '~/components/Pages'
+    ]
+  },
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/eslint
-    '@nuxtjs/eslint-module'
+    '@nuxtjs/eslint-module',
+    '@nuxtjs/style-resources',
+    'nuxt-lazysizes',
+    '@nuxtjs/composition-api/module'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -39,16 +50,38 @@ export default {
     // https://go.nuxtjs.dev/bootstrap
     'bootstrap-vue/nuxt',
     // https://go.nuxtjs.dev/axios
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@nuxtjs/device',
+    'nuxt-i18n',
+    'cookie-universal-nuxt',
+    'nuxt-ssr-cache',
   ],
+
+  bootstrapVue: {
+    bootstrapCSS: false, // Or `css: false`
+    bootstrapVueCSS: false, // Or `bvCSS: false`
+    componentPlugins: ['TablePlugin', 'PaginationPlugin', 'ToastPlugin', 'DropdownPlugin'],
+    directivePlugins: []
+  },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
-    baseURL: '/'
+    debug: false
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    analyze: false,
+    babel: {
+      compact: true,
+      plugins: [
+        ['@babel/plugin-proposal-private-property-in-object', { loose: true }]
+      ]
+    },
+    optimizeCSS: true,
+    extractCSS: {
+      ignoreOrder: true
+    }
   }
 }
