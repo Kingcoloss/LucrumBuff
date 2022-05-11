@@ -16,10 +16,6 @@ export default {
     ]
   },
 
-  router: {
-    middleware: ['authentication']
-  },
-
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     '@/assets/scss/main.scss'
@@ -57,8 +53,8 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/device',
     'nuxt-i18n',
-    ['cookie-universal-nuxt', { alias: 'ucookies' }],
-    'nuxt-ssr-cache'
+    'cookie-universal-nuxt',
+    'nuxt-ssr-cache',
   ],
 
   bootstrapVue: {
