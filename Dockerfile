@@ -1,4 +1,4 @@
-FROM node:14.19.2-alpine
+FROM node:14.19.1-alpine
 
 # create destination directory
 RUN mkdir -p /usr/src/lucrumbuff_front_app
