@@ -1,7 +1,7 @@
 <template>
   <div class="container home-content">
     <div class="w-100 h-100 text-center">
-      Home Dev
+      Home
     </div>
   </div>
 </template>

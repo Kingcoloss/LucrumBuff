@@ -1,3 +1,12 @@
+$breakpoints: (
+  'xs': 0,
+  'sm': 576px,
+  'md': 768px,
+  'lg': 992px,
+  'xl': 1200px,
+  'xxl': 1400px
+);
+
 // main theme color
 $primary: #27ff99;
 $primary-75: #56ffaf;
@@ -9,3 +18,154 @@ $twin-primary: #36393e;
 // Nav Color
 $nav-text-color: #1e2124; 
 $nav-text-color-1: #424549;
+
+// Color
+$black                  : #000;
+$white                  : #fff;
+$red                    : #fe3d53;
+$bue                    : #3fbedf;
+$green                  : #00CA5C;
+$purple                 : #42369d;
+$pink                   : #c50550;
+$orange                 : #fc7c06;
+$tertiary-orange        : #f7921e;
+$tertiary-yellow        : #ffd200;
+$status-blue            : #0e95e1;
+
+// Grey
+$dark-gray              : #303034;
+$deep-gray              : #1e1e21;// #231f20;
+$middle-gray            : #3f444a;
+$medium-gray            : #2a2e34;// #676b80;
+$gray                   : #72767d;// #868686;
+$light-gray             : #f1f2f3;// #dedede;
+$light-gray0            : #717478;
+$light-gray1            : #9da6ad;
+$light-gray2            : #edeef0;
+$light-gray3            : #f7f8f8;
+$light-gray4            : #dadbdf;
+$gray-50                : #c9cbd5;
+$gray-30                : #e5e6eb;
+$gray-20                : #f0f0f4;
+$gray-10                : #f7f7f9;
+
+// Gradient
+$bg-gradient-gray-list  : $white, #f2f2f2;
+$bg-gradient-direction  : to bottom;
+
+// Brand colors
+$primary                : #fbb034;
+$primary-light          : #fff4d6;
+$primary-light-20       : #ccdef5;
+$primary-light-60       : #72a8ef;
+$primary-dark-10        : #1168d8;
+$primary-dark-20        : #0952b0;
+
+$secondary              : #1e1e21;
+$secondary-light-60     : #f7c273;
+$secondary-dark-10      : #f89704;
+$secondary-dark-20      : #ef7b00;
+
+// Borders/Line
+$border-primary         : $primary;
+$border-primary-light   : #72a8ef;
+$border-secondary       : #ffaa29;
+$border-gray            : #d8d8d8;
+$border-gray-50         : #c9c9cf;
+$border-gray-70         : #e3e3e3;
+$border-gray-75         : #f0f0f0;
+
+// Status colors
+$info                   : #3fbedf;
+$success                : #00c359;// #0abd57;
+$warning                : #fec81f;
+$fail                   : #ff495c;
+
+$default-link-color     : #3c6be4;
+
+// Default
+$default-bg-color       : #f2f3f4;
+
+// Fonts
+$default-title-color    : $deep-gray;
+$default-font-color     : $deep-gray; // $middle-gray;// #404044;
+
+// Font size
+// $body-font-size-number  : 26;
+$font-size-number           : 16;
+$font-size-small-number     : 14;
+$heading-font-size-number   : 24;
+
+$h1-font-size-number    : 48;
+$h2-font-size-number    : 36;
+$h3-font-size-number    : 30;
+$h4-font-size-number    : 24;
+$h5-font-size-number    : 20;
+$h6-font-size-number    : 18;
+
+$heading-font-size: #{$heading-font-size-number}px;;
+$default-font-size-small: #{$font-size-small-number}px;
+$default-font-size-large: #{$font-size-number}px;
+
+// $body-font-size         : 26px;
+// $h1-font-size-mobile    : 38px;
+// $h2-font-size-mobile    : 48px;
+// $h3-font-size-mobile    : 34px;
+// $h4-font-size-mobile    : 22px;
+
+$heading1-font-size           : #{$h1-font-size-number}px;
+$heading2-font-size           : #{$h2-font-size-number}px;
+$heading3-font-size           : #{$h3-font-size-number}px;
+$heading4-font-size           : #{$h4-font-size-number}px;
+$heading5-font-size           : #{$h5-font-size-number}px;
+$heading6-font-size           : #{$h6-font-size-number}px;
+
+// $default-line-height    : 1.1;  // Manothai
+$default-line-height    : 1.5;  // Sarabun
+$heading-line-height    : 1.11; // Helvethaica
+$heading-font-weight    : bold;
+
+
+// Radius
+$default-radius         : 4px;
+
+// Default gap
+$default-gap            : 15px;
+
+// Buttons
+$button-default-padding-x : 1rem;
+$button-min-width         : 114px;
+$button-xs-size           : 28;
+$button-sm-size           : 32;
+$button-md-size           : 42; // default
+$button-lg-size           : 48;
+$button-xl-size           : 56;
+$button-element-hover-brightness:brightness(96%);
+
+// Transition
+$default-transition     : all 0.2s ease-in-out;
+$transition-collapse    : height .25s ease;  // bootstrap default height .35s ease
+$transition-collapse-width: width .25s ease; // bootstrap default width .35s ease
+
+// Shadow
+$shadow                 : 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+$shadow-sm              : 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+$shadow-lg              : 0 1rem 3rem rgba(0, 0, 0, 0.175);
+
+$site-container-lg-gap      : 32px;
+$site-container-max-width   : 1366px;
+$container-lg-max-width     : 1143px;
+
+$embed-responsive-aspect-ratios: (
+  (21 9),
+  (16 9),
+  (4 3),
+  (1 1)
+) !default;
+
+
+// Breadcrumb
+$breadcrumb-divider: quote("/");
+
+$sticky-z-index       : 10;
+$backdrop-z-index     : 1072;

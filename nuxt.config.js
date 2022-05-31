@@ -1,3 +1,17 @@
+import envConfig from './configs/env'
+
+const nodeEnv = process.env.NODE_ENV
+
+let envFileName = ''
+
+if (nodeEnv !== 'production') {
+  envFileName = '.env'
+} else {
+  envFileName = '.env.production'
+}
+
+envConfig(envFileName)
+
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -16,10 +30,13 @@ export default {
     ]
   },
 
+  router: {},
+
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     '@/assets/scss/main.scss'
   ],
+
   styleResources: {
     scss: './assets/scss/global.scss'
   },
@@ -42,7 +59,13 @@ export default {
     '@nuxtjs/eslint-module',
     '@nuxtjs/style-resources',
     'nuxt-lazysizes',
-    '@nuxtjs/composition-api/module'
+    '@nuxtjs/composition-api/module',
+    [
+      '@nuxtjs/dotenv',
+      {
+        filename: envFileName
+      }
+    ]
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -53,8 +76,8 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/device',
     'nuxt-i18n',
-    'cookie-universal-nuxt',
-    'nuxt-ssr-cache',
+    ['cookie-universal-nuxt', { alias: 'ucookies' }],
+    'nuxt-ssr-cache'
   ],
 
   bootstrapVue: {

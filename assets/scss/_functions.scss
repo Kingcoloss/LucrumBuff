@@ -1,0 +1,22 @@
+@use "sass:math";
+@function headings($from: 1, $to: 6) {
+    @if ($from == $to) {
+        @return '.h#{$from}, h#{$from}';
+    }
+    @else {
+        @return '.h#{$from}, h#{$from},' + headings($from+1, $to);
+    }
+}
+@function convertToRem($size) {
+    @return #{math.div($size, 16)}rem;
+}
+@function calculateButtonPaddingY($font-size, $line-height, $height, $border-width: 1) {
+    $lineHeight : $font-size * $line-height;
+    $newHeight  : $height - $border-width * 2;
+    $spaceRemain: $newHeight - $lineHeight;
+    $paddingY   : math.div($spaceRemain, 2);
+    @return convertToRem($paddingY);
+}
+@function div($number, $by) {
+    @return math.div($number, $by);
+}
